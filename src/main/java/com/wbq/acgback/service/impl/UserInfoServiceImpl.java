@@ -18,6 +18,7 @@ public class UserInfoServiceImpl implements UserInfoService {
     @Resource
     private UserInfoMapper userInfoMapper;
 
+    @Override
     public UserInfo selectById(Integer id) {
         return userInfoMapper.selectById(id);
     }
