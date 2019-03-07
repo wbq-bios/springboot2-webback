@@ -5,7 +5,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-@MapperScan(basePackages = "com.wbq.acgback.dao")
+@MapperScan(basePackages = "com.wbq.acgback.web.*.mapper")
 public class AcgbackApplication {
 
     public static void main(String[] args) {

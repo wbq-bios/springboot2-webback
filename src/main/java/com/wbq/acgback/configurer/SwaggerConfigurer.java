@@ -1,8 +1,10 @@
 package com.wbq.acgback.configurer;
 
+import com.github.xiaoymin.swaggerbootstrapui.annotations.EnableSwaggerBootstrapUI;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
+import springfox.documentation.annotations.ApiIgnore;
 import springfox.documentation.builders.ApiInfoBuilder;
 import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
@@ -25,9 +27,10 @@ public class SwaggerConfigurer {
         return new Docket(DocumentationType.SWAGGER_2)
                 .apiInfo(apiInfo())
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("com.wbq.acgback.controller"))
+                .apis(RequestHandlerSelectors.basePackage("com.wbq.acgback.web"))
                 .paths(PathSelectors.any())
-                .build();
+                .build()
+                .ignoredParameterTypes(ApiIgnore.class);
     }
 
     private ApiInfo apiInfo() {
@@ -38,6 +41,7 @@ public class SwaggerConfigurer {
                 .contact(new Contact("wbq", "https://github.com/wbq-bios", null))
                 .version("1.0")
                 .build();
+
     }
 
 

@@ -1,5 +1,9 @@
 package com.wbq.acgback.Util.ret;
 
+import com.wbq.acgback.web.sys.entity.UserInfo;
+
+import java.util.List;
+
 /**
  * @description: 将结果转换为封装后的对象
  * @author: wbq
